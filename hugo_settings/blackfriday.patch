@@ -1,0 +1,148 @@
+From 25ccce992202bd555c2a49688ab16623fe9df044 Mon Sep 17 00:00:00 2001
+From: Yuto Tokunaga <yuntan.sub1@gmail.com>
+Date: Sun, 4 Oct 2015 16:17:46 +0900
+Subject: [PATCH] [ADD] LaTeX inline and display math surrounded by '$' or '$$'
+
+replace inline math '$' to '\('
+replace display math '$$' to '\['
+disable taking underlines as emphasis
+---
+ html.go     | 16 ++++++++++++++++
+ inline.go   | 46 ++++++++++++++++++++++++++++++++++++++++++++++
+ latex.go    | 16 ++++++++++++++++
+ markdown.go |  6 ++++++
+ 4 files changed, 84 insertions(+)
+
+diff --git a/html.go b/html.go
+index 264aae5..34ea3c3 100644
+--- a/html.go
++++ b/html.go
+@@ -946,3 +946,19 @@ func (options *Html) ensureUniqueHeaderID(id string) string {
+ 
+ 	return id
+ }
++
++func (options *Html) Math(out *bytes.Buffer, equation []byte, inline bool) {
++	if inline {
++		out.WriteString("\\(")
++	} else {
++		out.WriteString("\\[")
++	}
++
++	attrEscape(out, equation)
++
++	if inline {
++		out.WriteString("\\)")
++	} else {
++		out.WriteString("\\]")
++	}
++}
+diff --git a/inline.go b/inline.go
+index 3f39b52..5f7be74 100644
+--- a/inline.go
++++ b/inline.go
+@@ -1101,3 +1101,49 @@ func helperTripleEmphasis(p *parser, out *bytes.Buffer, data []byte, offset int,
+ 	}
+ 	return 0
+ }
++
++// LaTeX math surrounded by '$' or '$$'
++func math(p *parser, out *bytes.Buffer, data []byte, offset int) int {
++	data = data[offset:]
++
++	// inline math
++	if len(data) > 2 && data[1] != '$' {
++		// find the next '$'
++		end := 1
++		for end < len(data) && data[end] != '$' {
++			end++
++		}
++
++		// no matching delimiter?
++		if end == len(data) {
++			return 0
++		}
++
++		// render the inline math
++		if end != 0 {
++			p.r.Math(out, data[1:end], true)
++		}
++		return end + 1
++	}
++
++	// display math
++	if len(data) > 4 && data[1] == '$' && data[2] != '$' {
++		// find the next '$$'
++		end := 2
++		for end+1 < len(data) && (data[end] != '$' || data[end+1] != '$') {
++			end++
++		}
++
++		// no matching delimiter?
++		if end+1 == len(data) {
++			return 0
++		}
++
++		// render the display math
++		if end != 0 {
++			p.r.Math(out, data[2:end], false)
++		}
++		return end + 2
++	}
++	return 0
++}
+diff --git a/latex.go b/latex.go
+index 70705aa..5d789f5 100644
+--- a/latex.go
++++ b/latex.go
+@@ -330,3 +330,19 @@ func (options *Latex) DocumentHeader(out *bytes.Buffer) {
+ func (options *Latex) DocumentFooter(out *bytes.Buffer) {
+ 	out.WriteString("\n\\end{document}\n")
+ }
++
++func (options *Latex) Math(out *bytes.Buffer, equation []byte, inline bool) {
++	if inline {
++		out.WriteString("\\(")
++	} else {
++		out.WriteString("\\[")
++	}
++
++	out.Write(equation)
++
++	if inline {
++		out.WriteString("\\(")
++	} else {
++		out.WriteString("\\]")
++	}
++}
+diff --git a/markdown.go b/markdown.go
+index c61b006..f277da6 100644
+--- a/markdown.go
++++ b/markdown.go
+@@ -45,6 +45,7 @@ const (
+ 	EXTENSION_AUTO_HEADER_IDS                        // Create the header ID from the text
+ 	EXTENSION_BACKSLASH_LINE_BREAK                   // translate trailing backslashes into line breaks
+ 	EXTENSION_DEFINITION_LISTS                       // render definition lists
++	EXTENSION_LATEX_MATH                             // latex inline and display math surrounded by '$' or '$$'
+ 
+ 	commonHtmlFlags = 0 |
+ 		HTML_USE_XHTML |
+@@ -183,6 +184,7 @@ type Renderer interface {
+ 	TripleEmphasis(out *bytes.Buffer, text []byte)
+ 	StrikeThrough(out *bytes.Buffer, text []byte)
+ 	FootnoteRef(out *bytes.Buffer, ref []byte, id int)
++	Math(out *bytes.Buffer, equation []byte, inline bool)
+ 
+ 	// Low-level callbacks
+ 	Entity(out *bytes.Buffer, entity []byte)
+@@ -374,6 +376,10 @@ func MarkdownOptions(input []byte, renderer Renderer, opts Options) []byte {
+ 		p.notes = make([]*reference, 0)
+ 	}
+ 
++	if extensions&EXTENSION_LATEX_MATH != 0 {
++		p.inlineCallback['$'] = math
++	}
++
+ 	first := firstPass(p, input)
+ 	second := secondPass(p, first)
+ 	return second

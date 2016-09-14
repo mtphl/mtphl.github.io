@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hugoの設定</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.17-DEV" />
+  <link href="" rel="alternate" type="application/rss+xml" title="予備録" />
+  <link href="http://mtphl.com/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://mtphl.com/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://mtphl.com/"><p class="navbar-brand">予備録</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://mtphl.com/"><h1 class="brand">予備録</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">Hugoの設定</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2016-05-20</small></p> <hr/>
+   <div class="post">
+     
+
+<h2 id="やりたいこと">やりたいこと</h2>
+
+<p>Mathjaxを使っていい感じの数式を書きたいのだが、_(アンダースコア)がMarkdownで予約されているせいで、Latexの下付き文字と衝突して困る。</p>
+
+<p>いちいちエスケープするのも、そのままtexにもっていけないのでいやだ。</p>
+
+<p>しょうがないので、Hugoのソースコードをいじってやった。</p>
+
+<h2 id="goのインストール">Goのインストール</h2>
+
+<p>Goの最新バージョンをインストールして、pathの設定もしておく。</p>
+
+<h2 id="hugoのダウンロード">Hugoのダウンロード</h2>
+
+<p><a href="https://github.com/spf13/hugo">公式ページ</a>にあるように、</p>
+
+<pre><code>go get -u -v github.com/spf13/hugo
+</code></pre>
+
+<p>しておく。</p>
+
+<h2 id="blackfridayにpatch">Blackfridayにpatch</h2>
+
+<p>調べたところHugoはMarkdownからhtmlへ変換するために、Blackfridayなるパッケージを使っているらしい。ちょうど、やりたかったことをやってくださった方がいたので、その成果を拝借した。</p>
+
+<p><a href="https://github.com/yuntan/blackfriday/commit/25ccce992202bd555c2a49688ab16623fe9df044.patch">patch</a>を&rdquo;$GOPATH/src/github.com/russross/blackfriday&rdquo;に&rdquo;git apply&rdquo;する。</p>
+
+<p><a href="http://mtphl.com/hugo_settings/blackfriday.patch">mirror</a></p>
+
+<p>その他のパッケージもつじつまをあわせる。</p>
+
+<p><a href="http://mtphl.com/hugo_settings/md2man.patch">patch</a>を&rdquo;$GOPATH/src/github.com/cpuguy83/go-md2man&rdquo;に&rdquo;git apply&rdquo;する。</p>
+
+<p><a href="http://mtphl.com/hugo_settings/hugo.patch">patch</a>を&rdquo;$GOPATH/src/github.com/spf13/hugo&rdquo;に&rdquo;git apply&rdquo;する。</p>
+
+<h2 id="build">build</h2>
+
+<pre><code>cd $GOPATH/src/github.com/spf13/hugo
+go build -o hugo main.go 
+</code></pre>
+
+<p>もしくは</p>
+
+<pre><code>cd $GOPATH/src/github.com/spf13/hugo
+go install
+</code></pre>
+
+<h2 id="siteの設定">siteの設定</h2>
+
+<p>config.tomlに以下の設定を追加する。</p>
+
+<pre><code>extensions = [&quot;latexMath&quot;]
+</code></pre>
+
+<h2 id="問題点">問題点</h2>
+
+<p><del>現在のバージョンではなぜか&rdquo;hugo server&rdquo;がうまく働かない。</del>
+現在(2016/6/18)は動くようだ。
+また、バージョンがあがればこんなことをしなくても、config.tomlに</p>
+
+<pre><code>extensions = [&quot;noIntraEmphasis&quot;]
+</code></pre>
+
+<p>を追加すれば動く&hellip;かもしれない。</p>
+
+<h2 id="commands">Commands</h2>
+
+<pre><code>go get -u -v github.com/spf13/hugo
+cd $GOPATH/src/github.com/russross/blackfriday
+wget http://mtphl.com/hugo_settings/blackfriday.patch
+git apply blackfriday.patch
+cd $GOPATH/src/github.com/cpuguy83/go-md2man
+wget http://mtphl.com/hugo_settings/md2man.patch
+git apply md2man.patch
+cd $GOPATH/src/github.com/spf13/hugo
+wget http://mtphl.com/hugo_settings/hugo.patch
+git apply hugo.patch
+go install
+</code></pre>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+     
+      &nbsp;<li class="next"><a href="http://mtphl.com/test/"> このページの目的</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2016. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://mtphl.com/js/jquery-1.10.2.min.js"></script>
+    <script src="http://mtphl.com/js/bootstrap.min.js"></script>
+    <script src="http://mtphl.com/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://mtphl.com/js/hc.js"></script>
+	<script type="text/javascript"
+			src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+</body>
+
+</html>
+

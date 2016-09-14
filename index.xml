@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>予備録</title>
+    <link>http://mtphl.com/index.xml</link>
+    <description>Recent content on 予備録</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 20 May 2016 06:37:37 +0900</lastBuildDate>
+    <atom:link href="http://mtphl.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugoの設定</title>
+      <link>http://mtphl.com/hugo_settings/</link>
+      <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
+      
+      <guid>http://mtphl.com/hugo_settings/</guid>
+      <description>
+
+&lt;h2 id=&#34;やりたいこと&#34;&gt;やりたいこと&lt;/h2&gt;
+
+&lt;p&gt;Mathjaxを使っていい感じの数式を書きたいのだが、_(アンダースコア)がMarkdownで予約されているせいで、Latexの下付き文字と衝突して困る。&lt;/p&gt;
+
+&lt;p&gt;いちいちエスケープするのも、そのままtexにもっていけないのでいやだ。&lt;/p&gt;
+
+&lt;p&gt;しょうがないので、Hugoのソースコードをいじってやった。&lt;/p&gt;
+
+&lt;h2 id=&#34;goのインストール&#34;&gt;Goのインストール&lt;/h2&gt;
+
+&lt;p&gt;Goの最新バージョンをインストールして、pathの設定もしておく。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugoのダウンロード&#34;&gt;Hugoのダウンロード&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;公式ページ&lt;/a&gt;にあるように、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go get -u -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しておく。&lt;/p&gt;
+
+&lt;h2 id=&#34;blackfridayにpatch&#34;&gt;Blackfridayにpatch&lt;/h2&gt;
+
+&lt;p&gt;調べたところHugoはMarkdownからhtmlへ変換するために、Blackfridayなるパッケージを使っているらしい。ちょうど、やりたかったことをやってくださった方がいたので、その成果を拝借した。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/yuntan/blackfriday/commit/25ccce992202bd555c2a49688ab16623fe9df044.patch&#34;&gt;patch&lt;/a&gt;を&amp;rdquo;$GOPATH/src/github.com/russross/blackfriday&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://mtphl.com/hugo_settings/blackfriday.patch&#34;&gt;mirror&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;その他のパッケージもつじつまをあわせる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://mtphl.com/hugo_settings/md2man.patch&#34;&gt;patch&lt;/a&gt;を&amp;rdquo;$GOPATH/src/github.com/cpuguy83/go-md2man&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://mtphl.com/hugo_settings/hugo.patch&#34;&gt;patch&lt;/a&gt;を&amp;rdquo;$GOPATH/src/github.com/spf13/hugo&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。&lt;/p&gt;
+
+&lt;h2 id=&#34;build&#34;&gt;build&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/spf13/hugo
+go build -o hugo main.go 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;もしくは&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/spf13/hugo
+go install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;siteの設定&#34;&gt;siteの設定&lt;/h2&gt;
+
+&lt;p&gt;config.tomlに以下の設定を追加する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;extensions = [&amp;quot;latexMath&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;問題点&#34;&gt;問題点&lt;/h2&gt;
+
+&lt;p&gt;&lt;del&gt;現在のバージョンではなぜか&amp;rdquo;hugo server&amp;rdquo;がうまく働かない。&lt;/del&gt;
+現在(2016/6/18)は動くようだ。
+また、バージョンがあがればこんなことをしなくても、config.tomlに&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;extensions = [&amp;quot;noIntraEmphasis&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を追加すれば動く&amp;hellip;かもしれない。&lt;/p&gt;
+
+&lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;go get -u -v github.com/spf13/hugo
+cd $GOPATH/src/github.com/russross/blackfriday
+wget http://mtphl.com/hugo_settings/blackfriday.patch
+git apply blackfriday.patch
+cd $GOPATH/src/github.com/cpuguy83/go-md2man
+wget http://mtphl.com/hugo_settings/md2man.patch
+git apply md2man.patch
+cd $GOPATH/src/github.com/spf13/hugo
+wget http://mtphl.com/hugo_settings/hugo.patch
+git apply hugo.patch
+go install
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>このページの目的</title>
+      <link>http://mtphl.com/test/</link>
+      <pubDate>Fri, 20 May 2016 00:59:47 +0900</pubDate>
+      
+      <guid>http://mtphl.com/test/</guid>
+      <description>&lt;p&gt;個人的な日記兼予備録として書いてます。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

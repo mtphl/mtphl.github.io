@@ -1,0 +1,28 @@
+commit c041343424b77cd678363c0b6e7009ab060974ff
+Author: Null
+Date:   Fri May 20 06:31:02 2016 +0900
+
+    add
+
+diff --git a/helpers/content.go b/helpers/content.go
+index 7a6f361..94deafc 100644
+--- a/helpers/content.go
++++ b/helpers/content.go
+@@ -104,6 +104,7 @@ var blackfridayExtensionMap = map[string]int{
+ 	"autoHeaderIds":          blackfriday.EXTENSION_AUTO_HEADER_IDS,
+ 	"backslashLineBreak":     blackfriday.EXTENSION_BACKSLASH_LINE_BREAK,
+ 	"definitionLists":        blackfriday.EXTENSION_DEFINITION_LISTS,
++	"latexMath":              blackfriday.EXTENSION_LATEX_MATH,
+ }
+ 
+ var stripHTMLReplacer = strings.NewReplacer("\n", " ", "</p>", "\n", "<br>", "\n", "<br />", "\n")
+@@ -220,7 +221,8 @@ func getMarkdownExtensions(ctx *RenderingContext) int {
+ 		blackfriday.EXTENSION_SPACE_HEADERS |
+ 		blackfriday.EXTENSION_HEADER_IDS |
+ 		blackfriday.EXTENSION_BACKSLASH_LINE_BREAK |
+-		blackfriday.EXTENSION_DEFINITION_LISTS
++		blackfriday.EXTENSION_DEFINITION_LISTS |
++	    blackfriday.EXTENSION_LATEX_MATH
+ 
+ 	// Extra Blackfriday extensions that Hugo enables by default
+ 	flags := commonExtensions |
