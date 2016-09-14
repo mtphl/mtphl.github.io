@@ -6,8 +6,60 @@
     <description>Recent content on 予備録</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 20 May 2016 06:37:37 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Aug 2016 10:01:38 +0900</lastBuildDate>
     <atom:link href="http://mtphl.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>考え事</title>
+      <link>http://mtphl.com/thinking1/</link>
+      <pubDate>Sat, 06 Aug 2016 10:01:38 +0900</pubDate>
+      
+      <guid>http://mtphl.com/thinking1/</guid>
+      <description>&lt;p&gt;blogを作ってみたものの、書くことがみつからないので、考え事の内容をだらだらと書きつらねてみる。&lt;/p&gt;
+
+&lt;p&gt;まず、そもそも文章を書くこと自体が苦手だった。&lt;/p&gt;
+
+&lt;p&gt;英語の勉強しろといわれても、コミュニケーションにそこまで興味がない。自分の興味にもとづいた分野でやりたい。&lt;/p&gt;
+
+&lt;p&gt;skkの問題で、変換した後にenter押すとカーソルがいきなり先頭にとぶ。&lt;/p&gt;
+
+&lt;p&gt;院試対策にあきた。&lt;/p&gt;
+
+&lt;p&gt;日本人はなんで、こうも無批判な人が多い、あるいは、無批判であることを強いられるのか。(日本以外の国籍の人と話したことはありません)&lt;/p&gt;
+
+&lt;p&gt;数学のノートをネットにあげてもいいものか。(著作権的観点で)&lt;/p&gt;
+
+&lt;p&gt;学生はバイトをするべきか。&lt;/p&gt;
+
+&lt;p&gt;ゼミの教授との距離感をはかりかねる。(すべての人間にたいしていえる)&lt;/p&gt;
+
+&lt;p&gt;専攻をどうするか。連続と離散&lt;/p&gt;
+
+&lt;p&gt;文章の質を長さではかるのはいかがなものか。数学的感性でいえば、わざわざまわりくどく書くことに意味があるとは思えないが。&lt;/p&gt;
+
+&lt;p&gt;latexを早くうつ方法&lt;/p&gt;
+
+&lt;p&gt;わかった気にさせる説明もどきは嫌いだ。専門用語を用いるなといわれても、結果的にそちらの方がシンプルで、わかるまでにかかる時間も短い。(アナロジーとは別)&lt;/p&gt;
+
+&lt;p&gt;shell scriptやら、markdownの書きかたを毎回忘れる。&lt;/p&gt;
+
+&lt;p&gt;モジュライの意味、意義。&lt;/p&gt;
+
+&lt;p&gt;院試でホモロジー群の計算の計算をするときに、胞体分割を用いていいものか。&lt;/p&gt;
+
+&lt;p&gt;忘れることに忌避感がある。&lt;/p&gt;
+
+&lt;p&gt;word滅びろ。&lt;/p&gt;
+
+&lt;p&gt;フィールドに立つロボットをベクトルとみなして、ベクトル束として取り扱えないものか。&lt;/p&gt;
+
+&lt;p&gt;定義をすぐに組みたてられるレベルまで、数学的直感をみがきたい。&lt;/p&gt;
+
+&lt;p&gt;やり方がわかってしまった時点で興味がなくなる。&lt;/p&gt;
+
+&lt;p&gt;コーヒーうめぇ。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hugoの設定</title>
