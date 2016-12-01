@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>このページの目的</title>
+  <title>tips math1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.16-DEV" />
@@ -63,10 +63,69 @@
 
 
   <div id="article">
-   <div class="article-title">このページの目的</div>
-   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2016-05-20</small></p> <hr/>
+   <div class="article-title">tips math1</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2016-12-02</small></p> <hr/>
    <div class="post">
-     <p>個人的な日記兼予備録として書いてます。</p>
+     
+
+<h1 id="主張">主張</h1>
+
+<p>\[
+ \begin{align*}
+  &amp;X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W \\
+  &amp;g \circ f , h \circ g \text{がホモトピー同値写像} \Rightarrow g \text{はホモトピー同値写像}
+ \end{align*}
+\]</p>
+
+<h1 id="証明">証明</h1>
+
+<p>\[
+ \begin{align*}
+  g \circ f \text{がホモトピー同値写像} \iff \exists i \colon Z \rightarrow X \text{ s.t } &amp; g \circ f \circ i \simeq 1_{Z} \\
+  &amp;i \circ g \circ f \simeq 1_{X}
+ \end{align*}
+\]
+\[
+ \begin{align*}
+  h \circ g \text{がホモトピー同値写像} \iff \exists j \colon W \rightarrow Y \text{ s.t } &amp; h \circ g \circ j \simeq 1_{W} \\
+  &amp;j \circ h \circ g \simeq 1_{Y}
+ \end{align*}
+\]</p>
+
+<p>このとき、
+\[
+ F := f \circ i \circ g \circ j \circ h \colon Z \rightarrow Y 
+\]
+ は、
+\[
+ g \circ F \simeq 1_{Z} , F \circ g \simeq 1_{Y}
+\]
+ を満たす。</p>
+
+<p>実際、
+\[
+ \begin{align*}
+ g \circ F &amp;= g \circ f \circ i \circ g \circ j \circ h \\
+  &amp;\simeq 1_Z \circ g \circ j \circ h \\
+  &amp;\simeq g \circ j \circ h \circ 1_Z \\
+  &amp;\simeq g \circ j \circ h \circ (g \circ f \circ i) \\
+  &amp;\simeq g \circ (j \circ h \circ g) \circ f \circ i  \\
+  &amp;\simeq g \circ 1_Y \circ f \circ i  \\
+  &amp;\simeq 1_Z
+ \end{align*}
+\]
+\[
+ \begin{align*}
+ F \circ g &amp;=  f \circ i \circ g \circ j \circ h \circ g\\
+  &amp;\simeq f \circ i \circ g \circ 1_Y \\
+  &amp;\simeq 1_Y \circ f \circ i \circ g \\
+  &amp;\simeq (j \circ h \circ g) \circ f \circ i \circ g \\
+  &amp;\simeq j \circ h \circ (g \circ f \circ i) \circ g \\
+  &amp;\simeq j \circ h \circ 1_Z \circ g \\
+  &amp;\simeq 1_Y
+ \end{align*}
+\]
+ となる。</p>
 
    </div>
  </div>
@@ -76,8 +135,8 @@
  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
  <ul class="pager">
-      &nbsp;<li class="previous"><a href="http://mtphl.com/hugo_settings/"> Hugoの設定</a></li>
      
+      &nbsp;<li class="next"><a href="http://mtphl.com/hugo_settings/"> Hugoの設定</a></li>
 </ul>
 
 

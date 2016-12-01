@@ -2,12 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>予備録</title>
-    <link>http://mtphl.com/index.xml</link>
+    <link>http://mtphl.com/</link>
     <description>Recent content on 予備録</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 20 May 2016 06:37:37 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Dec 2016 02:26:16 +0900</lastBuildDate>
     <atom:link href="http://mtphl.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>tips math1</title>
+      <link>http://mtphl.com/tips-math1/</link>
+      <pubDate>Fri, 02 Dec 2016 02:26:16 +0900</pubDate>
+      
+      <guid>http://mtphl.com/tips-math1/</guid>
+      <description>
+
+&lt;h1 id=&#34;主張&#34;&gt;主張&lt;/h1&gt;
+
+&lt;p&gt;\[
+ \begin{align*}
+  &amp;amp;X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W \\
+  &amp;amp;g \circ f , h \circ g \text{がホモトピー同値写像} \Rightarrow g \text{はホモトピー同値写像}
+ \end{align*}
+\]&lt;/p&gt;
+
+&lt;h1 id=&#34;証明&#34;&gt;証明&lt;/h1&gt;
+
+&lt;p&gt;\[
+ \begin{align*}
+  g \circ f \text{がホモトピー同値写像} \iff \exists i \colon Z \rightarrow X \text{ s.t } &amp;amp; g \circ f \circ i \simeq 1_{Z} \\
+  &amp;amp;i \circ g \circ f \simeq 1_{X}
+ \end{align*}
+\]
+\[
+ \begin{align*}
+  h \circ g \text{がホモトピー同値写像} \iff \exists j \colon W \rightarrow Y \text{ s.t } &amp;amp; h \circ g \circ j \simeq 1_{W} \\
+  &amp;amp;j \circ h \circ g \simeq 1_{Y}
+ \end{align*}
+\]&lt;/p&gt;
+
+&lt;p&gt;このとき、
+\[
+ F := f \circ i \circ g \circ j \circ h \colon Z \rightarrow Y 
+\]
+ は、
+\[
+ g \circ F \simeq 1_{Z} , F \circ g \simeq 1_{Y}
+\]
+ を満たす。&lt;/p&gt;
+
+&lt;p&gt;実際、
+\[
+ \begin{align*}
+ g \circ F &amp;amp;= g \circ f \circ i \circ g \circ j \circ h \\
+  &amp;amp;\simeq 1_Z \circ g \circ j \circ h \\
+  &amp;amp;\simeq g \circ j \circ h \circ 1_Z \\
+  &amp;amp;\simeq g \circ j \circ h \circ (g \circ f \circ i) \\
+  &amp;amp;\simeq g \circ (j \circ h \circ g) \circ f \circ i  \\
+  &amp;amp;\simeq g \circ 1_Y \circ f \circ i  \\
+  &amp;amp;\simeq 1_Z
+ \end{align*}
+\]
+\[
+ \begin{align*}
+ F \circ g &amp;amp;=  f \circ i \circ g \circ j \circ h \circ g\\
+  &amp;amp;\simeq f \circ i \circ g \circ 1_Y \\
+  &amp;amp;\simeq 1_Y \circ f \circ i \circ g \\
+  &amp;amp;\simeq (j \circ h \circ g) \circ f \circ i \circ g \\
+  &amp;amp;\simeq j \circ h \circ (g \circ f \circ i) \circ g \\
+  &amp;amp;\simeq j \circ h \circ 1_Z \circ g \\
+  &amp;amp;\simeq 1_Y
+ \end{align*}
+\]
+ となる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hugoの設定</title>
