@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Custom Rom on 予備録</title>
+    <link>http://mtphl.com/categories/custom-rom/</link>
+    <description>Recent content in Custom Rom on 予備録</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 17 Sep 2017 22:22:03 +0900</lastBuildDate>
+    
+	<atom:link href="http://mtphl.com/categories/custom-rom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>V580にCM14.1をインストール</title>
+      <link>http://mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Sun, 17 Sep 2017 22:22:03 +0900</pubDate>
+      
+      <guid>http://mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</guid>
+      <description>はじめに ZTE Blade V580というAndroid端末のCustom Rom(CM14.1)をがんばって入れた話し。のーわらんてぃ。
+Links  Stock Rom LineageOS TWRP IMEI修正プログラム SuperSu LineageOSのsu  TT175=V580である。OneTeamとかいうフォーラムでダウンロードしたいときは、適当にアカウント作って親指をクリックすればできるようになる。
+SP Flash Tool MediatekのSoCを使っている端末で、Preloaderをふさいでいないものは、SP Flash Toolというプログラムを使うことで、任意のパーティションを上書きできるようだ。 使い方はDownload押したあとに、電源を切った状態の端末に、USBケーブルをぶっさすだけ。nvramはバックアップしておいた方がよいかも。モデム領域もリセットしたいときは、Format All + Dowloadとかをつかうべし。
+IMEIがぶっこわれたら SP Flash Toolを使っていると、端末固有の領域をフォーマットしなければならない状況に落ちいるので、あらかじめIMEIを控えておいてIMEI修正プログラムのimei.cのこの
+char out_mask[12] = {0xAB, 0xA0, 0x6F, 0x2F, 0x1F, 0x1E, 0x9A, 0x45, 0x0, 0x0, 0x0, 0x0};  部分を
+char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0x0, 0x0};  と書きかえてコンパイルしたブツに、引き数として控えておいたIMEIを与えてやる。(MT6753ではマスクデータだけ変わってるだけみたい)するとMP0B_001_NEWとかいうファイルができるのでそいつをadbとかで、/data/nvram/md/NVRAM/NVD_IMEI/MP0B_001に上書きしてやる。(要root)ちゃんとBaseband versionとかがみえている状況なら、IMEIが復活するハズ。(みえていない状況でもこの操作でいろいろ直ることはある)
+1.BootloaderのUnlock まず、TWRPを焼いていろいろしたいので、BootloaderをUnlockしやす。この機種は設定からOEMロック解除とかいう項目にチェック入れた後に、fastboot modeでfastboot oem unlockとしてやればよい。その後、端末がリセットされるので、一回再起動しておこう。</description>
+    </item>
+    
+  </channel>
+</rss>

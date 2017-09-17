@@ -6,166 +6,49 @@
     <description>Recent content on 予備録</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 02 Dec 2016 02:26:16 +0900</lastBuildDate>
-    <atom:link href="http://mtphl.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Sep 2017 22:22:03 +0900</lastBuildDate>
+    
+	<atom:link href="http://mtphl.com/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>tips</title>
-      <link>http://mtphl.com/tips-math1/</link>
-      <pubDate>Fri, 02 Dec 2016 02:26:16 +0900</pubDate>
+      <title>V580にCM14.1をインストール</title>
+      <link>http://mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Sun, 17 Sep 2017 22:22:03 +0900</pubDate>
       
-      <guid>http://mtphl.com/tips-math1/</guid>
-      <description>
-
-&lt;h1 id=&#34;主張&#34;&gt;主張&lt;/h1&gt;
-
-&lt;p&gt;\[
- \begin{align*}
-  &amp;amp;X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W \\
-  &amp;amp;g \circ f , h \circ g \text{がホモトピー同値写像} \Rightarrow g \text{はホモトピー同値写像}
- \end{align*}
-\]&lt;/p&gt;
-
-&lt;h1 id=&#34;証明&#34;&gt;証明&lt;/h1&gt;
-
-&lt;p&gt;\[
- \begin{align*}
-  g \circ f \text{がホモトピー同値写像} \iff \exists i \colon Z \rightarrow X \text{ s.t } &amp;amp; g \circ f \circ i \simeq 1_{Z} \\
-  &amp;amp;i \circ g \circ f \simeq 1_{X}
- \end{align*}
-\]
-\[
- \begin{align*}
-  h \circ g \text{がホモトピー同値写像} \iff \exists j \colon W \rightarrow Y \text{ s.t } &amp;amp; h \circ g \circ j \simeq 1_{W} \\
-  &amp;amp;j \circ h \circ g \simeq 1_{Y}
- \end{align*}
-\]&lt;/p&gt;
-
-&lt;p&gt;このとき、
-\[
- F := f \circ i \circ g \circ j \circ h \colon Z \rightarrow Y 
-\]
- は、
-\[
- g \circ F \simeq 1_{Z} , F \circ g \simeq 1_{Y}
-\]
- を満たす。&lt;/p&gt;
-
-&lt;p&gt;実際、
-\[
- \begin{align*}
- g \circ F &amp;amp;= g \circ f \circ i \circ g \circ j \circ h \\
-  &amp;amp;\simeq 1_Z \circ g \circ j \circ h \\
-  &amp;amp;\simeq g \circ j \circ h \circ 1_Z \\
-  &amp;amp;\simeq g \circ j \circ h \circ (g \circ f \circ i) \\
-  &amp;amp;\simeq g \circ (j \circ h \circ g) \circ f \circ i  \\
-  &amp;amp;\simeq g \circ 1_Y \circ f \circ i  \\
-  &amp;amp;\simeq 1_Z
- \end{align*}
-\]
-\[
- \begin{align*}
- F \circ g &amp;amp;=  f \circ i \circ g \circ j \circ h \circ g\\
-  &amp;amp;\simeq f \circ i \circ g \circ 1_Y \\
-  &amp;amp;\simeq 1_Y \circ f \circ i \circ g \\
-  &amp;amp;\simeq (j \circ h \circ g) \circ f \circ i \circ g \\
-  &amp;amp;\simeq j \circ h \circ (g \circ f \circ i) \circ g \\
-  &amp;amp;\simeq j \circ h \circ 1_Z \circ g \\
-  &amp;amp;\simeq 1_Y
- \end{align*}
-\]
- となる。&lt;/p&gt;
-</description>
+      <guid>http://mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</guid>
+      <description>はじめに ZTE Blade V580というAndroid端末のCustom Rom(CM14.1)をがんばって入れた話し。のーわらんてぃ。
+Links  Stock Rom LineageOS TWRP IMEI修正プログラム SuperSu LineageOSのsu  TT175=V580である。OneTeamとかいうフォーラムでダウンロードしたいときは、適当にアカウント作って親指をクリックすればできるようになる。
+SP Flash Tool MediatekのSoCを使っている端末で、Preloaderをふさいでいないものは、SP Flash Toolというプログラムを使うことで、任意のパーティションを上書きできるようだ。 使い方はDownload押したあとに、電源を切った状態の端末に、USBケーブルをぶっさすだけ。nvramはバックアップしておいた方がよいかも。モデム領域もリセットしたいときは、Format All + Dowloadとかをつかうべし。
+IMEIがぶっこわれたら SP Flash Toolを使っていると、端末固有の領域をフォーマットしなければならない状況に落ちいるので、あらかじめIMEIを控えておいてIMEI修正プログラムのimei.cのこの
+char out_mask[12] = {0xAB, 0xA0, 0x6F, 0x2F, 0x1F, 0x1E, 0x9A, 0x45, 0x0, 0x0, 0x0, 0x0};  部分を
+char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0x0, 0x0};  と書きかえてコンパイルしたブツに、引き数として控えておいたIMEIを与えてやる。(MT6753ではマスクデータだけ変わってるだけみたい)するとMP0B_001_NEWとかいうファイルができるのでそいつをadbとかで、/data/nvram/md/NVRAM/NVD_IMEI/MP0B_001に上書きしてやる。(要root)ちゃんとBaseband versionとかがみえている状況なら、IMEIが復活するハズ。(みえていない状況でもこの操作でいろいろ直ることはある)
+1.BootloaderのUnlock まず、TWRPを焼いていろいろしたいので、BootloaderをUnlockしやす。この機種は設定からOEMロック解除とかいう項目にチェック入れた後に、fastboot modeでfastboot oem unlockとしてやればよい。その後、端末がリセットされるので、一回再起動しておこう。</description>
     </item>
     
     <item>
       <title>Hugoの設定</title>
-      <link>http://mtphl.com/hugo_settings/</link>
+      <link>http://mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
       
-      <guid>http://mtphl.com/hugo_settings/</guid>
-      <description>
-
-&lt;h2 id=&#34;やりたいこと&#34;&gt;やりたいこと&lt;/h2&gt;
-
-&lt;p&gt;Mathjaxを使っていい感じの数式を書きたいのだが、_(アンダースコア)がMarkdownで予約されているせいで、Latexの下付き文字と衝突して困る。&lt;/p&gt;
-
-&lt;p&gt;いちいちエスケープするのも、そのままtexにもっていけないのでいやだ。&lt;/p&gt;
-
-&lt;p&gt;しょうがないので、Hugoのソースコードをいじってやった。&lt;/p&gt;
-
-&lt;h2 id=&#34;goのインストール&#34;&gt;Goのインストール&lt;/h2&gt;
-
-&lt;p&gt;Goの最新バージョンをインストールして、pathの設定もしておく。&lt;/p&gt;
-
-&lt;h2 id=&#34;hugoのダウンロード&#34;&gt;Hugoのダウンロード&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;公式ページ&lt;/a&gt;にあるように、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go get -u -v github.com/spf13/hugo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;しておく。&lt;/p&gt;
-
-&lt;h2 id=&#34;blackfridayにpatch&#34;&gt;Blackfridayにpatch&lt;/h2&gt;
-
-&lt;p&gt;調べたところHugoはMarkdownからhtmlへ変換するために、Blackfridayなるパッケージを使っているらしい。ちょうど、やりたかったことをやってくださった方がいたので、その成果を拝借した。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/yuntan/blackfriday/commit/25ccce992202bd555c2a49688ab16623fe9df044.patch&#34;&gt;patch&lt;/a&gt;を&amp;rdquo;$GOPATH/src/github.com/russross/blackfriday&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://mtphl.com/hugo_settings/blackfriday.patch&#34;&gt;mirror&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;その他のパッケージもつじつまをあわせる。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://mtphl.com/hugo_settings/md2man.patch&#34;&gt;patch&lt;/a&gt;を&amp;rdquo;$GOPATH/src/github.com/cpuguy83/go-md2man&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://mtphl.com/hugo_settings/hugo.patch&#34;&gt;patch&lt;/a&gt;を&amp;rdquo;$GOPATH/src/github.com/spf13/hugo&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。&lt;/p&gt;
-
-&lt;h2 id=&#34;build&#34;&gt;build&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/spf13/hugo
-go build -o hugo main.go 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;もしくは&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/spf13/hugo
-go install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;siteの設定&#34;&gt;siteの設定&lt;/h2&gt;
-
-&lt;p&gt;config.tomlに以下の設定を追加する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;extensions = [&amp;quot;latexMath&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;問題点&#34;&gt;問題点&lt;/h2&gt;
-
-&lt;p&gt;&lt;del&gt;現在のバージョンではなぜか&amp;rdquo;hugo server&amp;rdquo;がうまく働かない。&lt;/del&gt;
-現在(2016/6/18)は動くようだ。
-また、バージョンがあがればこんなことをしなくても、config.tomlに&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;extensions = [&amp;quot;noIntraEmphasis&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;を追加すれば動く&amp;hellip;かもしれない。&lt;/p&gt;
-
-&lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;go get -u -v github.com/spf13/hugo
-cd $GOPATH/src/github.com/russross/blackfriday
-wget http://mtphl.com/hugo_settings/blackfriday.patch
-git apply blackfriday.patch
-cd $GOPATH/src/github.com/cpuguy83/go-md2man
-wget http://mtphl.com/hugo_settings/md2man.patch
-git apply md2man.patch
-cd $GOPATH/src/github.com/spf13/hugo
-wget http://mtphl.com/hugo_settings/hugo.patch
-git apply hugo.patch
-go install
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>http://mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
+      <description>やりたいこと Mathjaxを使っていい感じの数式を書きたいのだが、_(アンダースコア)がMarkdownで予約されているせいで、Latexの下付き文字と衝突して困る。
+いちいちエスケープするのも、そのままtexにもっていけないのでいやだ。
+しょうがないので、Hugoのソースコードをいじってやった。
+Goのインストール Goの最新バージョンをインストールして、pathの設定もしておく。
+Hugoのダウンロード 公式ページにあるように、
+go get -u -v github.com/gohugoio/hugo  しておく。
+Blackfridayにpatch 調べたところHugoはMarkdownからhtmlへ変換するために、Blackfridayなるパッケージを使っているらしい。ちょうど、やりたかったことをやってくださった方がいたので、その成果を拝借した。
+patchを&amp;rdquo;$GOPATH/src/github.com/russross/blackfriday&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。
+mirror &amp;lt;- こっちが最新(2017/9/17)
+その他のパッケージもつじつまをあわせる。
+patchを&amp;rdquo;$GOPATH/src/github.com/cpuguy83/go-md2man&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。
+patchを&amp;rdquo;$GOPATH/src/github.com/spf13/hugo&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。
+build cd $GOPATH/src/github.com/gohugoio/hugo go build -o hugo main.go  もしくは
+cd $GOPATH/src/github.com/gohugoio/hugo go install  siteの設定 config.tomlに以下の設定を追加する。
+extensions = [&amp;quot;latexMath&amp;quot;]  問題点 現在のバージョンではなぜか&amp;rdquo;hugo server&amp;rdquo;がうまく働かない。 現在(2016/6/18)は動くようだ。 また、バージョンがあがればこんなことをしなくても、config.tomlに
+extensions = [&amp;quot;noIntraEmphasis&amp;quot;]  を追加すれば動く&amp;hellip;かもしれない。 Blackfridayでは対応しない線が濃厚です。
+Commands go get -u -v github.com/gohugoio/hugo cd $GOPATH/src/github.com/russross/blackfriday wget http://mtphl.com/hugo_settings/blackfriday.patch git apply blackfriday.</description>
     </item>
     
     <item>
@@ -174,8 +57,7 @@ go install
       <pubDate>Fri, 20 May 2016 00:59:47 +0900</pubDate>
       
       <guid>http://mtphl.com/test/</guid>
-      <description>&lt;p&gt;個人的な日記兼予備録として書いてます。&lt;/p&gt;
-</description>
+      <description>個人的な日記兼予備録として書いてます。</description>
     </item>
     
   </channel>

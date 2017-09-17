@@ -1,0 +1,21 @@
+commit 419a0b431f93175608cca0fca1d7beb769694619
+Author: Null
+Date:   Fri May 20 07:18:59 2016 +0900
+
+    add
+
+diff --git a/md2man/roff.go b/md2man/roff.go
+index 9f12daa..78d1ad7 100644
+--- a/md2man/roff.go
++++ b/md2man/roff.go
+@@ -156,6 +156,10 @@ func (r *roffRenderer) Footnotes(out *bytes.Buffer, text func() bool) {
+ 
+ }
+ 
++func (r *roffRenderer) Math(out *bytes.Buffer, equation []byte, inline bool) {
++
++}
++
+ func (r *roffRenderer) FootnoteItem(out *bytes.Buffer, name, text []byte, flags int) {
+ 
+ }
