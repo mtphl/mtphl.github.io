@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mathjax on 予備録</title>
-    <link>http://mtphl.com/tags/mathjax/</link>
+    <link>http://www.mtphl.com/tags/mathjax/</link>
     <description>Recent content in Mathjax on 予備録</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 20 May 2016 06:37:37 +0900</lastBuildDate>
     
-	<atom:link href="http://mtphl.com/tags/mathjax/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.mtphl.com/tags/mathjax/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugoの設定</title>
-      <link>http://mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
+      <link>http://www.mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
       
-      <guid>http://mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
+      <guid>http://www.mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
       <description>やりたいこと Mathjaxを使っていい感じの数式を書きたいのだが、_(アンダースコア)がMarkdownで予約されているせいで、Latexの下付き文字と衝突して困る。
 いちいちエスケープするのも、そのままtexにもっていけないのでいやだ。
 しょうがないので、Hugoのソースコードをいじってやった。

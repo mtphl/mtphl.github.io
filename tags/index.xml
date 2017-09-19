@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 予備録</title>
-    <link>http://mtphl.com/tags/</link>
+    <link>http://www.mtphl.com/tags/</link>
     <description>Recent content in Tags on 予備録</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 17 Sep 2017 22:22:03 +0900</lastBuildDate>
     
-	<atom:link href="http://mtphl.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.mtphl.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Android</title>
-      <link>http://mtphl.com/tags/android/</link>
+      <link>http://www.mtphl.com/tags/android/</link>
       <pubDate>Sun, 17 Sep 2017 22:22:03 +0900</pubDate>
       
-      <guid>http://mtphl.com/tags/android/</guid>
+      <guid>http://www.mtphl.com/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>http://mtphl.com/tags/hugo/</link>
+      <link>http://www.mtphl.com/tags/hugo/</link>
       <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
       
-      <guid>http://mtphl.com/tags/hugo/</guid>
+      <guid>http://www.mtphl.com/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mathjax</title>
-      <link>http://mtphl.com/tags/mathjax/</link>
+      <link>http://www.mtphl.com/tags/mathjax/</link>
       <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
       
-      <guid>http://mtphl.com/tags/mathjax/</guid>
+      <guid>http://www.mtphl.com/tags/mathjax/</guid>
       <description></description>
     </item>
     
