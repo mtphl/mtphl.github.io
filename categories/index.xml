@@ -29,23 +29,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>config</title>
-      <link>http://www.mtphl.com/categories/config/</link>
-      <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
-      
-      <guid>http://www.mtphl.com/categories/config/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>http://www.mtphl.com/categories/hugo/</link>
-      <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
-      
-      <guid>http://www.mtphl.com/categories/hugo/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

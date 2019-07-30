@@ -27,47 +27,27 @@ char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0
     </item>
     
     <item>
-      <title>tips</title>
-      <link>http://www.mtphl.com/2016/12/tips/</link>
-      <pubDate>Fri, 02 Dec 2016 02:26:16 +0900</pubDate>
-      
-      <guid>http://www.mtphl.com/2016/12/tips/</guid>
-      <description>主張 $$ \begin{align} &amp;amp;X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W &amp;amp;g \circ f , h \circ g \text{がホモトピー同値写像} \Rightarrow g \text{はホモトピー同値写像} \end{align} $$
-証明 $$ \begin{align} g \circ f \text{がホモトピー同値写像} \iff \exists i \colon Z \rightarrow X \text{ s.t } &amp;amp; g \circ f \circ i \simeq 1{Z} &amp;amp;i \circ g \circ f \simeq 1{X} \end{align} $$ $$ \begin{align} h \circ g \text{がホモトピー同値写像} \iff \exists j \colon W \rightarrow Y \text{ s.</description>
-    </item>
-    
-    <item>
-      <title>Hugoの設定</title>
-      <link>http://www.mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
-      <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
-      
-      <guid>http://www.mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
-      <description>やりたいこと Mathjaxを使っていい感じの数式を書きたいのだが、_(アンダースコア)がMarkdownで予約されているせいで、Latexの下付き文字と衝突して困る。
-いちいちエスケープするのも、そのままtexにもっていけないのでいやだ。
-しょうがないので、Hugoのソースコードをいじってやった。
-Goのインストール Goの最新バージョンをインストールして、pathの設定もしておく。
-Hugoのダウンロード 公式ページにあるように、
-go get -u -v github.com/gohugoio/hugo  しておく。
-Blackfridayにpatch 調べたところHugoはMarkdownからhtmlへ変換するために、Blackfridayなるパッケージを使っているらしい。ちょうど、やりたかったことをやってくださった方がいたので、その成果を拝借した。
-patchを&amp;rdquo;$GOPATH/src/github.com/russross/blackfriday&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。
-mirror &amp;lt;- こっちが最新(2017/9/17)
-その他のパッケージもつじつまをあわせる。
-patchを&amp;rdquo;$GOPATH/src/github.com/cpuguy83/go-md2man&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。
-patchを&amp;rdquo;$GOPATH/src/github.com/spf13/hugo&amp;rdquo;に&amp;rdquo;git apply&amp;rdquo;する。
-build cd $GOPATH/src/github.com/gohugoio/hugo go build -o hugo main.go  もしくは
-cd $GOPATH/src/github.com/gohugoio/hugo go install  siteの設定 config.tomlに以下の設定を追加する。
-extensions = [&amp;quot;latexMath&amp;quot;]  問題点 現在のバージョンではなぜか&amp;rdquo;hugo server&amp;rdquo;がうまく働かない。 現在(2016/6/18)は動くようだ。 また、バージョンがあがればこんなことをしなくても、config.tomlに
-extensions = [&amp;quot;noIntraEmphasis&amp;quot;]  を追加すれば動く&amp;hellip;かもしれない。 Blackfridayでは対応しない線が濃厚です。
-Commands go get -u -v github.com/gohugoio/hugo cd $GOPATH/src/github.com/russross/blackfriday wget http://mtphl.com/hugo_settings/blackfriday.patch git apply blackfriday.</description>
-    </item>
-    
-    <item>
       <title>このページの目的</title>
       <link>http://www.mtphl.com/test/</link>
       <pubDate>Fri, 20 May 2016 00:59:47 +0900</pubDate>
       
       <guid>http://www.mtphl.com/test/</guid>
       <description>個人的な日記兼予備録として書いてます。</description>
+    </item>
+    
+    <item>
+      <title>最近考えていること</title>
+      <link>http://www.mtphl.com/1/01/%E6%9C%80%E8%BF%91%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.mtphl.com/1/01/%E6%9C%80%E8%BF%91%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
+      <description>失敗に対する考え方の変化/自分が出来無いことについての自己正当化 すこし前までは, うまくいかないことがあると, 自分の努力が足りないからだと考えていた. しかし, 最近考えかたが変わってきた.
+どのように変化したか？
+以下の様な事を考えて, 自己正当化のような心理が働くようになったのだ.
+ やればできるが, 人並みの水準に持っていくのにかかるコストが高い. そもそも, 自分のやりたい事ではなかった. やりたいこと(やるべきこと)だとしても, 周囲の期待する成功と自分の目指しているものがそもそもずれている.  失敗の指摘に対する反応も変化したように思う. 以前は叱られると萎縮してしまい, 自分はなんてダメなんだろうと考えていた. また, 周囲との軋轢を生まないような選択を無意識にしていた気がする.
+近ごろは一歩引いて考えるようになり, 相手が不機嫌になったときでも 不機嫌になることでどのようなメッセージを与えたいのか, さらにいえば 自分をどうコントロールしたいのかという気配を探るようになった.
+ある種の開きなおりで, あまりよろしくないかと思ったけれども, ぼくは自分の気持ちを発見しなきゃいけないから, うけいれることにした.
+視野を広くもちつつ, 自分の感情を大切にすることはどうすれば両立できるのだろうか？</description>
     </item>
     
   </channel>
