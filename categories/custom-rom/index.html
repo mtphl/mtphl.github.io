@@ -15,8 +15,8 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.28-DEV with theme Tranquilpeak 0.4.1-BETA">
-    <title>Custom Rom</title>
+    <meta name="generator" content="Hugo 0.55.6 with theme Tranquilpeak 0.4.1-BETA">
+    <title>custom rom</title>
     <meta name="author" content="mtphl">
     <meta name="keywords" content="">
 
@@ -29,7 +29,7 @@
     <meta name="description" content="個人的な予備録">
     <meta property="og:description" content="個人的な予備録">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Custom Rom">
+    <meta property="og:title" content="custom rom">
     <meta property="og:url" content="/categories/custom-rom/">
     <meta property="og:site_name" content="予備録">
     <meta name="twitter:card" content="summary">
@@ -214,7 +214,7 @@ char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0
         
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2017 mtphl. 
+    &copy; 2019 mtphl. 
   </span>
 </footer>
 
@@ -258,6 +258,23 @@ char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="http://www.mtphl.com/post/">
+                <h3 class="media-heading">Posts</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="http://www.mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/">
                 <h3 class="media-heading">V580にCM14.1をインストール</h3>
               </a>
@@ -273,6 +290,24 @@ IMEIがぶっこわれたら SP Flash Toolを使っていると、端末固有�
 char out_mask[12] = {0xAB, 0xA0, 0x6F, 0x2F, 0x1F, 0x1E, 0x9A, 0x45, 0x0, 0x0, 0x0, 0x0};  部分を
 char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0x0, 0x0};  と書きかえてコンパイルしたブツに、引き数として控えておいたIMEIを与えてやる。(MT6753ではマスクデータだけ変わってるだけみたい)するとMP0B_001_NEWとかいうファイルができるのでそいつをadbとかで、/data/nvram/md/NVRAM/NVD_IMEI/MP0B_001に上書きしてやる。(要root)ちゃんとBaseband versionとかがみえている状況なら、IMEIが復活するハズ。(みえていない状況でもこの操作でいろいろ直ることはある)
 1.BootloaderのUnlock まず、TWRPを焼いていろいろしたいので、BootloaderをUnlockしやす。この機種は設定からOEMロック解除とかいう項目にチェック入れた後に、fastboot modeでfastboot oem unlockとしてやればよい。その後、端末がリセットされるので、一回再起動しておこう。</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://www.mtphl.com/2016/12/tips/">
+                <h3 class="media-heading">tips</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">主張 $$ \begin{align} &amp;X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W &amp;g \circ f , h \circ g \text{がホモトピー同値写像} \Rightarrow g \text{はホモトピー同値写像} \end{align} $$
+証明 $$ \begin{align} g \circ f \text{がホモトピー同値写像} \iff \exists i \colon Z \rightarrow X \text{ s.t } &amp; g \circ f \circ i \simeq 1{Z} &amp;i \circ g \circ f \simeq 1{X} \end{align} $$ $$ \begin{align} h \circ g \text{がホモトピー同値写像} \iff \exists j \colon W \rightarrow Y \text{ s.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -311,23 +346,6 @@ Commands go get -u -v github.com/gohugoio/hugo cd $GOPATH/src/github.com/russros
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="http://www.mtphl.com/post/">
-                <h3 class="media-heading">Posts</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -335,7 +353,7 @@ Commands go get -u -v github.com/gohugoio/hugo cd $GOPATH/src/github.com/russros
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         3 posts found
+         4 posts found
       </p>
     </div>
   </div>

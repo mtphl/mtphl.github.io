@@ -27,6 +27,16 @@ char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0
     </item>
     
     <item>
+      <title>tips</title>
+      <link>http://www.mtphl.com/2016/12/tips/</link>
+      <pubDate>Fri, 02 Dec 2016 02:26:16 +0900</pubDate>
+      
+      <guid>http://www.mtphl.com/2016/12/tips/</guid>
+      <description>主張 $$ \begin{align} &amp;amp;X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} W &amp;amp;g \circ f , h \circ g \text{がホモトピー同値写像} \Rightarrow g \text{はホモトピー同値写像} \end{align} $$
+証明 $$ \begin{align} g \circ f \text{がホモトピー同値写像} \iff \exists i \colon Z \rightarrow X \text{ s.t } &amp;amp; g \circ f \circ i \simeq 1{Z} &amp;amp;i \circ g \circ f \simeq 1{X} \end{align} $$ $$ \begin{align} h \circ g \text{がホモトピー同値写像} \iff \exists j \colon W \rightarrow Y \text{ s.</description>
+    </item>
+    
+    <item>
       <title>Hugoの設定</title>
       <link>http://www.mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>

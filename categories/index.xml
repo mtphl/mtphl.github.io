@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Android</title>
+      <title>android</title>
       <link>http://www.mtphl.com/categories/android/</link>
       <pubDate>Sun, 17 Sep 2017 22:22:03 +0900</pubDate>
       
@@ -21,16 +21,7 @@
     </item>
     
     <item>
-      <title>Config</title>
-      <link>http://www.mtphl.com/categories/config/</link>
-      <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
-      
-      <guid>http://www.mtphl.com/categories/config/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Custom Rom</title>
+      <title>custom rom</title>
       <link>http://www.mtphl.com/categories/custom-rom/</link>
       <pubDate>Sun, 17 Sep 2017 22:22:03 +0900</pubDate>
       
@@ -39,7 +30,16 @@
     </item>
     
     <item>
-      <title>Hugo</title>
+      <title>config</title>
+      <link>http://www.mtphl.com/categories/config/</link>
+      <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
+      
+      <guid>http://www.mtphl.com/categories/config/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
       <link>http://www.mtphl.com/categories/hugo/</link>
       <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
       
