@@ -61,7 +61,7 @@ build cd $GOPATH/src/github.com/gohugoio/hugo go build -o hugo main.go  もし�
 cd $GOPATH/src/github.com/gohugoio/hugo go install  siteの設定 config.tomlに以下の設定を追加する。
 extensions = [&amp;quot;latexMath&amp;quot;]  問題点 現在のバージョンではなぜか&amp;rdquo;hugo server&amp;rdquo;がうまく働かない。 現在(2016/6/18)は動くようだ。 また、バージョンがあがればこんなことをしなくても、config.tomlに
 extensions = [&amp;quot;noIntraEmphasis&amp;quot;]  を追加すれば動く&amp;hellip;かもしれない。 Blackfridayでは対応しない線が濃厚です。
-Commands go get -u -v github.com/gohugoio/hugo cd $GOPATH/src/github.com/russross/blackfriday wget http://mtphl.com/hugo_settings/blackfriday.patch git apply blackfriday.</description>
+Commands go get -u -v github.com/gohugoio/hugo cd $GOPATH/src/github.com/russross/blackfriday wget http://www.mtphl.com/hugo_settings/blackfriday.patch git apply blackfriday.</description>
     </item>
     
     <item>
