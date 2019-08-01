@@ -2,21 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 予備録</title>
-    <link>http://mtphl.com/post/</link>
+    <link>http://www.mtphl.com/post/</link>
     <description>Recent content in Posts on 予備録</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 17 Sep 2017 22:22:03 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 12:11:06 +0900</lastBuildDate>
     
-	<atom:link href="http://mtphl.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.mtphl.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Moyamoya</title>
+      <link>http://www.mtphl.com/2019/08/moyamoya/</link>
+      <pubDate>Thu, 01 Aug 2019 12:11:06 +0900</pubDate>
+      
+      <guid>http://www.mtphl.com/2019/08/moyamoya/</guid>
+      <description>院試にすべった件 どうしよ&amp;hellip; なぜうまくいかなかったのかすごくもやもやする&amp;hellip; なんで, 落とすのにねほりはほり聞いたのーーっておもう どのくらいたりなかったのかなぁ りーぐんきらいだーーー まあいっか すきな数学しよ
+ビジネスってなんやねん 金のために, 適当なものうるんかい 徹底的にこだわったものを作りたいなぁ 自己満足だろうか？
+スケジューリングの方法 タスクをつっこむと自動的にスケジュールしてくれて, 適切にリマインドしてくれるものってないかなぁ
+わかってるアピール ちょっと変なこと書くと, わかってねえなぁという雰囲気を感じる わかってるアピールしたいわけではないのだけど, 知ってるよー ていう風によそおいたくなってしまう&amp;hellip;
+アウトプットの練習 ちゃんとした論文を書きたいので, ブログで練習しようとおもいました..</description>
+    </item>
+    
+    <item>
       <title>V580にCM14.1をインストール</title>
-      <link>http://mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</link>
+      <link>http://www.mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</link>
       <pubDate>Sun, 17 Sep 2017 22:22:03 +0900</pubDate>
       
-      <guid>http://mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</guid>
+      <guid>http://www.mtphl.com/2017/09/v580%E3%81%ABcm14.1%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</guid>
       <description>はじめに ZTE Blade V580というAndroid端末のCustom Rom(CM14.1)をがんばって入れた話し。のーわらんてぃ。
 Links  Stock Rom LineageOS TWRP IMEI修正プログラム SuperSu LineageOSのsu  TT175=V580である。OneTeamとかいうフォーラムでダウンロードしたいときは、適当にアカウント作って親指をクリックすればできるようになる。
 SP Flash Tool MediatekのSoCを使っている端末で、Preloaderをふさいでいないものは、SP Flash Toolというプログラムを使うことで、任意のパーティションを上書きできるようだ。 使い方はDownload押したあとに、電源を切った状態の端末に、USBケーブルをぶっさすだけ。nvramはバックアップしておいた方がよいかも。モデム領域もリセットしたいときは、Format All + Dowloadとかをつかうべし。
@@ -28,10 +41,10 @@ char out_mask[12] = {0x16, 0xE5, 0xF4, 0xD1, 0xE8, 0x6A, 0x42, 0x40, 0x0, 0x0, 0
     
     <item>
       <title>Hugoの設定</title>
-      <link>http://mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
+      <link>http://www.mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Fri, 20 May 2016 06:37:37 +0900</pubDate>
       
-      <guid>http://mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
+      <guid>http://www.mtphl.com/2016/05/hugo%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
       <description>やりたいこと Mathjaxを使っていい感じの数式を書きたいのだが、_(アンダースコア)がMarkdownで予約されているせいで、Latexの下付き文字と衝突して困る。
 いちいちエスケープするのも、そのままtexにもっていけないのでいやだ。
 しょうがないので、Hugoのソースコードをいじってやった。
@@ -53,10 +66,10 @@ Commands go get -u -v github.com/gohugoio/hugo cd $GOPATH/src/github.com/russros
     
     <item>
       <title>最近考えていること</title>
-      <link>http://mtphl.com/1/01/%E6%9C%80%E8%BF%91%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
+      <link>http://www.mtphl.com/1/01/%E6%9C%80%E8%BF%91%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://mtphl.com/1/01/%E6%9C%80%E8%BF%91%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
+      <guid>http://www.mtphl.com/1/01/%E6%9C%80%E8%BF%91%E8%80%83%E3%81%88%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
       <description>失敗に対する考え方の変化/自分が出来無いことについての自己正当化 すこし前までは, うまくいかないことがあると, 自分の努力が足りないからだと考えていた. しかし, 最近考えかたが変わってきた.
 どのように変化したか？
 以下の様な事を考えて, 自己正当化のような心理が働くようになったのだ.
